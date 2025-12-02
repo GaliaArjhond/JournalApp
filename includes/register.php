@@ -46,14 +46,13 @@ if (isset($_POST['register'])) {
             if ($stmt->execute()) {
                 $success = "Registration successful! You can now login.";
             } else {
-                $error = "Registration failed.";
+                $error = "Registration failed. Please try again.";
             }
         }
     }
 }
 ?>
 
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,16 +63,48 @@ if (isset($_POST['register'])) {
 </head>
 
 <body>
-    <main>
-        <div class="register-container">
-            <h1>Create Account</h1>
-            <div class="welcome-container">
-                <p class="welcome">Please enter your credentials to log in.</p>
+    <div class="register-container">
+        <h1>Create Account</h1>
+
+        <?php
+        if (!empty($error)) echo '<p class="message">' . $error . '</p>';
+        if (!empty($success)) echo '<p class="message success">' . $success . '</p>';
+        ?>
+
+        <form action="" method="post">
+            <div class="input-container">
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required>
             </div>
 
+            <div class="input-container">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-        </div>
-    </main>
+            <div class="input-container">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+
+            <div class="input-container">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+            </div>
+
+            <div class="input-container">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="input-container">
+                <label for="confirm">Confirm Password:</label>
+                <input type="password" id="confirm" name="confirm" required>
+            </div>
+
+            <button type="submit" name="register">Create Account</button>
+        </form>
+    </div>
 </body>
 
 </html>
