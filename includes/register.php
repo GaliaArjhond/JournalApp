@@ -1,6 +1,6 @@
 <?php
 // DATABASE CONNECTION
-$conn = new mysqli("localhost", "root", "", "journalApp");
+$conn = new mysqli("localhost", "root", "admin", "journalapp");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

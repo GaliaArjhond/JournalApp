@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'journalApp';
+$dbname = 'journalapp';
 $username = 'root';
 $password = 'admin';
 

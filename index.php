@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "journalApp");
+$conn = new mysqli("localhost", "root", "admin", "journalapp");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a href="forgot_pass.html">Forgot Password?</a>
                     </div>
                     <div class="register">
-                        <label for="register">Don't have an account?<a href="register.html">Register</a></label>
+                        <label for="register">Don't have an account?<a href="register.php">Register</a></label>
                     </div>
                 </div>
                 <button type="submit">Login</button>
