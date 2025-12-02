@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a href="forgot_pass.html">Forgot Password?</a>
                     </div>
                     <div class="register-text">
-                        Don't have an account? <a href="includes/register.php">Register</a>
+                        Don't have an account?<a href="includes/register.php">Register</a>
                     </div>
 
                 </div>
