@@ -41,8 +41,8 @@ if (isset($_POST['register'])) {
             // Hash password with MD5 to match login system
             $hashedPassword = md5($password);
 
-            // Insert user
-            $stmt = $conn->prepare("INSERT INTO users (name, email, password, phone, address, createdAt) VALUES (?, ?, ?, ?, ?, ?)");
+            // Insert user with correct column name: full_name
+            $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, phone, address, createdAt) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("ssssss", $full_name, $email, $hashedPassword, $phone, $address, $createdAt);
 
             if ($stmt->execute()) {

@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.logout-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 50px 40px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logout-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  font-size: 40px;
+  color: white;
+}
+
+.logout-card h1 {
+  color: #2d3748;
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.logout-message {
+  color: #718096;
+  font-size: 16px;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.logout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-logout,
+.btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-logout {
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+  color: white;
+}
+
+.btn-logout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(245, 101, 101, 0.4);
+}
+
+.btn-logout:active {
+  transform: translateY(0);
+}
+
+.btn-cancel {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.btn-cancel:hover {
+  background: #cbd5e0;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Extra small phones - up to 480px */
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  .logout-card {
+    padding: 40px 25px;
+    border-radius: 12px;
+  }
+
+  .logout-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+
+  .logout-card h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .logout-message {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .logout-actions {
+    gap: 10px;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 11px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Small phones - 360px or less */
+@media (max-width: 360px) {
+  body {
+    padding: 10px;
+  }
+
+  .logout-card {
+    padding: 30px 20px;
+  }
+
+  .logout-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .logout-card h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .logout-message {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Tablets - 481px to 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .logout-card {
+    padding: 45px 35px;
+    border-radius: 13px;
+  }
+
+  .logout-icon {
+    width: 75px;
+    height: 75px;
+    font-size: 38px;
+    margin-bottom: 22px;
+  }
+
+  .logout-card h1 {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .logout-message {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Small desktops - 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logout-card {
+    padding: 50px 38px;
+  }
+
+  .logout-icon {
+    width: 85px;
+    height: 85px;
+    font-size: 42px;
+    margin-bottom: 28px;
+  }
+
+  .logout-card h1 {
+    font-size: 29px;
+    margin-bottom: 16px;
+  }
+
+  .logout-message {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 13px 28px;
+    font-size: 16px;
+  }
+}
+
+/* Large desktops - 1025px and above */
+@media (min-width: 1025px) {
+  .logout-card {
+    padding: 55px 45px;
+    max-width: 500px;
+  }
+
+  .logout-icon {
+    width: 90px;
+    height: 90px;
+    font-size: 45px;
+    margin-bottom: 30px;
+  }
+
+  .logout-card h1 {
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .logout-message {
+    font-size: 17px;
+    margin-bottom: 35px;
+    line-height: 1.8;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 14px 32px;
+    font-size: 17px;
+  }
+}

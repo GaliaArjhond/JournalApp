@@ -73,7 +73,7 @@ $conn->close();
                         <label for="remember-me">Remember me</label>
                     </div>
                     <div class="forgot-password">
-                        <a href="forgot_pass.html">Forgot Password?</a>
+                        <a href="includes/forgotPass.php">Forgot Password?</a>
                     </div>
                     <div class="register-text">
                         Don't have an account? <a href="includes/register.php">Register</a>

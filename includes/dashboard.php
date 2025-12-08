@@ -51,7 +51,7 @@ $conn->close();
     <div class="journal-container">
         <div class="journal-header">
             <h1>My Journal</h1>
-            <p class="greeting">Welcome, <?php echo htmlspecialchars($user['name']); ?>!</p>
+            <p class="greeting">Welcome, <?php echo htmlspecialchars($user['full_name']); ?>!</p>
         </div>
 
         <div class="entries">
