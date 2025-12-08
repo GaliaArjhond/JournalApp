@@ -5,8 +5,11 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: "Georgia", "Garamond", serif;
+  background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%),
+    url("../image/booksBackground.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -24,12 +27,14 @@ main {
 .register-container {
   width: 100%;
   max-width: 500px;
-  background: white;
+  background: rgba(255, 248, 240, 0.95);
   border-radius: 15px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   padding: 40px;
   animation: slideUp 0.5s ease-out;
   text-align: center;
+  border: 2px solid #d4a574;
+  backdrop-filter: blur(10px);
 }
 
 @keyframes slideUp {
@@ -44,10 +49,12 @@ main {
 }
 
 .register-container h1 {
-  color: #667eea;
+  color: #8b4513;
   font-size: 32px;
   margin-bottom: 30px;
   font-weight: 700;
+  font-style: italic;
+  letter-spacing: 2px;
 }
 
 .welcome-container {
@@ -55,41 +62,41 @@ main {
 }
 
 .welcome-container h2 {
-  color: #2d3748;
+  color: #5c3317;
   font-size: 24px;
   margin-bottom: 10px;
 }
 
 .welcome {
-  color: #718096;
+  color: #7a5c3f;
   font-size: 14px;
   line-height: 1.6;
 }
 
 .error-message {
-  background: #fed7d7;
-  color: #c53030;
+  background: #ffe0e0;
+  color: #8b3a3a;
   padding: 12px 15px;
   border-radius: 8px;
   margin-bottom: 20px;
-  border-left: 4px solid #c53030;
+  border-left: 4px solid #c85c5c;
   font-size: 14px;
   text-align: left;
 }
 
 .success-message {
-  background: #c6f6d5;
-  color: #22543d;
+  background: #e0f2e0;
+  color: #3a6b3a;
   padding: 12px 15px;
   border-radius: 8px;
   margin-bottom: 20px;
-  border-left: 4px solid #38a169;
+  border-left: 4px solid #5c8b5c;
   font-size: 14px;
   text-align: left;
 }
 
 .success-message a {
-  color: #22543d;
+  color: #3a6b3a;
   font-weight: 600;
 }
 
@@ -107,7 +114,7 @@ form {
 }
 
 .input-container label {
-  color: #2d3748;
+  color: #5c3317;
   font-weight: 600;
   font-size: 14px;
 }
@@ -115,24 +122,26 @@ form {
 .input-container input,
 .input-container textarea {
   padding: 12px 15px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #d4a574;
   border-radius: 8px;
   font-size: 14px;
   transition: all 0.3s ease;
-  font-family: inherit;
+  font-family: "Georgia", serif;
+  background: rgba(255, 255, 255, 0.8);
   width: 100%;
 }
 
 .input-container input:focus,
 .input-container textarea:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #8b4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+  background: rgba(255, 255, 255, 1);
 }
 
 .input-container input::placeholder,
 .input-container textarea::placeholder {
-  color: #a0aec0;
+  color: #a0927d;
 }
 
 .input-container textarea {
@@ -141,13 +150,14 @@ form {
 }
 
 .password-requirements {
-  background: #edf2f7;
+  background: #f5ebe0;
   padding: 12px 15px;
   border-radius: 8px;
   font-size: 13px;
-  color: #4a5568;
+  color: #5c3317;
   margin-top: 8px;
   text-align: left;
+  border-left: 3px solid #d4a574;
 }
 
 .password-requirements ul {
@@ -177,13 +187,13 @@ form {
   width: 18px;
   height: 18px;
   cursor: pointer;
-  accent-color: #667eea;
+  accent-color: #8b4513;
   margin-top: 2px;
   flex-shrink: 0;
 }
 
 .terms label {
-  color: #4a5568;
+  color: #5c3317;
   cursor: pointer;
   margin: 0;
   line-height: 1.4;
@@ -191,7 +201,7 @@ form {
 }
 
 .terms a {
-  color: #667eea;
+  color: #8b4513;
   text-decoration: none;
   font-weight: 600;
 }
@@ -202,25 +212,25 @@ form {
 
 .login-text {
   text-align: center;
-  color: #4a5568;
+  color: #5c3317;
   font-size: 14px;
 }
 
 .login-text a {
-  color: #667eea;
+  color: #8b4513;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .login-text a:hover {
-  color: #764ba2;
+  color: #5c3317;
   text-decoration: underline;
 }
 
 button[type="submit"] {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #8b4513 0%, #5c3317 100%);
+  color: #fff8f0;
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
@@ -230,11 +240,12 @@ button[type="submit"] {
   transition: all 0.3s ease;
   margin-top: 10px;
   width: 100%;
+  font-family: "Georgia", serif;
 }
 
 button[type="submit"]:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(139, 69, 19, 0.4);
 }
 
 button[type="submit"]:active {
@@ -243,7 +254,6 @@ button[type="submit"]:active {
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Extra small phones - up to 480px */
 @media (max-width: 480px) {
   body {
     padding: 15px;
@@ -286,8 +296,8 @@ button[type="submit"]:active {
 
   .input-container input,
   .input-container textarea {
-    padding: 12px 12px;
-    font-size: 16px;
+    padding: 11px 12px;
+    font-size: 14px;
     border-radius: 6px;
   }
 
@@ -328,13 +338,12 @@ button[type="submit"]:active {
   }
 
   button[type="submit"] {
-    padding: 12px 18px;
+    padding: 11px 18px;
     font-size: 15px;
     margin-top: 8px;
   }
 }
 
-/* Small phones - 360px or less */
 @media (max-width: 360px) {
   .register-container {
     padding: 20px 15px;
@@ -360,7 +369,7 @@ button[type="submit"]:active {
   .input-container input,
   .input-container textarea {
     padding: 10px 10px;
-    font-size: 15px;
+    font-size: 13px;
   }
 
   form {
@@ -373,7 +382,6 @@ button[type="submit"]:active {
   }
 }
 
-/* Tablets - 481px to 768px */
 @media (min-width: 481px) and (max-width: 768px) {
   .register-container {
     max-width: 100%;
@@ -390,17 +398,16 @@ button[type="submit"]:active {
 
   .input-container input,
   .input-container textarea {
-    padding: 14px 15px;
-    font-size: 15px;
+    padding: 13px 15px;
+    font-size: 14px;
   }
 
   button[type="submit"] {
-    padding: 14px 20px;
-    font-size: 16px;
+    padding: 12px 20px;
+    font-size: 15px;
   }
 }
 
-/* Small desktops - 769px to 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
   .register-container {
     max-width: 550px;
@@ -423,16 +430,15 @@ button[type="submit"]:active {
   .input-container input,
   .input-container textarea {
     padding: 13px 15px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   button[type="submit"] {
-    padding: 13px 22px;
-    font-size: 16px;
+    padding: 12px 22px;
+    font-size: 15px;
   }
 }
 
-/* Large desktops - 1025px and above */
 @media (min-width: 1025px) {
   .register-container {
     max-width: 550px;
@@ -460,19 +466,15 @@ button[type="submit"]:active {
   .input-container input,
   .input-container textarea {
     padding: 14px 16px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .input-container textarea {
     min-height: 120px;
   }
 
-  .password-requirements {
-    font-size: 14px;
-  }
-
   button[type="submit"] {
-    padding: 14px 24px;
-    font-size: 17px;
+    padding: 13px 24px;
+    font-size: 16px;
   }
 }

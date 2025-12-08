@@ -5,8 +5,11 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: "Georgia", "Garamond", serif;
+  background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%),
+    url("../image/booksBackground.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -17,33 +20,36 @@ body {
 .journal-container {
   width: 100%;
   max-width: 800px;
-  background: white;
+  background: rgba(255, 248, 240, 0.97);
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 90vh;
   margin: 0 auto;
+  border: 2px solid #d4a574;
 }
 
 .journal-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #8b4513 0%, #5c3317 100%);
+  color: #fff8f0;
   padding: 30px 20px;
   text-align: center;
-  border-bottom: 5px solid #5a67d8;
+  border-bottom: 5px solid #5c3317;
 }
 
 .journal-header h1 {
   font-size: 32px;
   margin-bottom: 10px;
   font-weight: 700;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
 .greeting {
   font-size: 14px;
-  opacity: 0.9;
+  opacity: 0.95;
   font-style: italic;
 }
 
@@ -57,8 +63,8 @@ body {
 }
 
 .entry-card {
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
+  background: #faf5f0;
+  border: 2px solid #d4a574;
   border-radius: 12px;
   padding: 20px;
   transition: all 0.3s ease;
@@ -66,9 +72,10 @@ body {
 }
 
 .entry-card:hover {
-  border-color: #667eea;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+  border-color: #8b4513;
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
   transform: translateY(-2px);
+  background: #fdf8f3;
 }
 
 .entry-header {
@@ -82,24 +89,26 @@ body {
 
 .entry-header h3 {
   font-size: 18px;
-  color: #2d3748;
+  color: #5c3317;
   flex: 1;
   word-break: break-word;
   min-width: 150px;
+  font-weight: 600;
 }
 
 .entry-date {
   font-size: 12px;
-  color: #718096;
-  background: white;
+  color: #8b7355;
+  background: #f5ebe0;
   padding: 5px 10px;
   border-radius: 6px;
   white-space: nowrap;
+  border: 1px solid #d4a574;
 }
 
 .entry-content {
   font-size: 14px;
-  color: #4a5568;
+  color: #7a5c3f;
   line-height: 1.6;
   margin-bottom: 15px;
   max-height: 100px;
@@ -128,22 +137,22 @@ body {
 }
 
 .btn-edit {
-  background: #4299e1;
-  color: white;
+  background: #d4a574;
+  color: #fff8f0;
 }
 
 .btn-edit:hover {
-  background: #3182ce;
+  background: #8b4513;
   transform: scale(1.05);
 }
 
 .btn-delete {
-  background: #f56565;
-  color: white;
+  background: #c85c5c;
+  color: #fff8f0;
 }
 
 .btn-delete:hover {
-  background: #e53e3e;
+  background: #8b3a3a;
   transform: scale(1.05);
 }
 
@@ -152,7 +161,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #a0aec0;
+  color: #a0927d;
   padding: 60px 20px;
   text-align: center;
 }
@@ -165,21 +174,22 @@ body {
 
 .no-entries p {
   font-size: 16px;
+  color: #8b7355;
 }
 
 .add-entry {
   padding: 20px;
   text-align: center;
-  background: #f8f9fa;
-  border-top: 2px solid #e9ecef;
+  background: #f5ebe0;
+  border-top: 2px solid #d4a574;
 }
 
 .btn-add-entry {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #8b4513 0%, #5c3317 100%);
+  color: #fff8f0;
   padding: 12px 30px;
   border-radius: 25px;
   text-decoration: none;
@@ -188,18 +198,19 @@ body {
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  font-family: "Georgia", serif;
 }
 
 .btn-add-entry:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(139, 69, 19, 0.4);
 }
 
 .bottom-nav {
   display: flex;
   justify-content: space-around;
-  background: white;
-  border-top: 2px solid #e9ecef;
+  background: #faf5f0;
+  border-top: 2px solid #d4a574;
   padding: 10px 0;
 }
 
@@ -210,19 +221,19 @@ body {
   align-items: center;
   gap: 5px;
   padding: 10px;
-  color: #718096;
+  color: #8b7355;
   text-decoration: none;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
 }
 
 .nav-item:hover {
-  color: #667eea;
+  color: #8b4513;
 }
 
 .nav-item.active {
-  color: #667eea;
-  border-bottom-color: #667eea;
+  color: #8b4513;
+  border-bottom-color: #8b4513;
 }
 
 .nav-item i {
@@ -240,21 +251,20 @@ body {
 }
 
 .entries::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1ebe0;
 }
 
 .entries::-webkit-scrollbar-thumb {
-  background: #cbd5e0;
+  background: #d4a574;
   border-radius: 10px;
 }
 
 .entries::-webkit-scrollbar-thumb:hover {
-  background: #a0aec0;
+  background: #8b4513;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Extra small phones - up to 480px */
 @media (max-width: 480px) {
   body {
     padding: 10px;
@@ -328,7 +338,6 @@ body {
   }
 }
 
-/* Small phones - 360px or less */
 @media (max-width: 360px) {
   .journal-container {
     min-height: 100vh;
@@ -389,7 +398,6 @@ body {
   }
 }
 
-/* Tablets - 481px to 768px */
 @media (min-width: 481px) and (max-width: 768px) {
   .journal-container {
     max-width: 100%;
@@ -419,7 +427,7 @@ body {
   .btn-edit,
   .btn-delete {
     padding: 9px 14px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .btn-add-entry {
@@ -428,7 +436,6 @@ body {
   }
 }
 
-/* Small desktops - 769px to 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
   .journal-container {
     max-width: 750px;
@@ -461,17 +468,16 @@ body {
   }
 
   .entry-content {
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 18px;
   }
 
   .btn-add-entry {
-    padding: 13px 32px;
+    padding: 12px 32px;
     font-size: 16px;
   }
 }
 
-/* Large desktops - 1025px and above */
 @media (min-width: 1025px) {
   .journal-container {
     max-width: 850px;
@@ -525,7 +531,7 @@ body {
   }
 
   .btn-add-entry {
-    padding: 14px 35px;
+    padding: 13px 35px;
     font-size: 17px;
   }
 

@@ -5,8 +5,11 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: "Georgia", "Garamond", serif;
+  background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%),
+    url("../image/booksBackground.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -14,22 +17,23 @@ body {
   padding: 20px;
 }
 
-main {
+.logout-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.forgot-container {
-  width: 100%;
-  max-width: 450px;
-  background: white;
+.logout-card {
+  background: rgba(255, 248, 240, 0.97);
   border-radius: 15px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  padding: 40px;
-  animation: slideUp 0.5s ease-out;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  padding: 50px 40px;
+  max-width: 450px;
+  width: 100%;
   text-align: center;
+  animation: slideUp 0.5s ease-out;
+  border: 2px solid #d4a574;
 }
 
 @keyframes slideUp {
@@ -43,414 +47,240 @@ main {
   }
 }
 
-.forgot-container h1 {
-  color: #667eea;
-  font-size: 32px;
-  margin-bottom: 30px;
+.logout-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #c85c5c 0%, #8b3a3a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  font-size: 40px;
+  color: #fff8f0;
+}
+
+.logout-card h1 {
+  color: #5c3317;
+  font-size: 28px;
+  margin-bottom: 15px;
   font-weight: 700;
 }
 
-.welcome-container {
-  margin-bottom: 30px;
-}
-
-.welcome-container h2 {
-  color: #2d3748;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.welcome {
-  color: #718096;
-  font-size: 14px;
+.logout-message {
+  color: #8b7355;
+  font-size: 16px;
+  margin-bottom: 35px;
   line-height: 1.6;
 }
 
-.error-message {
-  background: #fed7d7;
-  color: #c53030;
-  padding: 12px 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  border-left: 4px solid #c53030;
-  font-size: 14px;
-  text-align: left;
-}
-
-.success-message {
-  background: #c6f6d5;
-  color: #22543d;
-  padding: 12px 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  border-left: 4px solid #38a169;
-  font-size: 14px;
-  text-align: left;
-}
-
-.success-message a {
-  color: #22543d;
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-form {
+.logout-actions {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  text-align: left;
-}
-
-.input-container label {
-  color: #2d3748;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.input-container input {
-  padding: 12px 15px;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  font-family: inherit;
-  width: 100%;
-}
-
-.input-container input:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.input-container input::placeholder {
-  color: #a0aec0;
-}
-
-.input-container small {
-  font-size: 12px;
-  color: #718096;
-  font-style: italic;
-  margin-top: 3px;
-}
-
-.step-info {
-  background: #edf2f7;
-  color: #2d3748;
-  padding: 12px 15px;
-  border-radius: 8px;
-  font-size: 14px;
-  display: flex;
+.btn-logout,
+.btn-cancel {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.step-info i {
-  color: #38a169;
-  font-size: 16px;
-}
-
-button[type="submit"] {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 12px 20px;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 25px;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease;
-  margin-top: 10px;
   width: 100%;
+  font-family: "Georgia", serif;
 }
 
-button[type="submit"]:hover {
+.btn-logout {
+  background: linear-gradient(135deg, #c85c5c 0%, #8b3a3a 100%);
+  color: #fff8f0;
+}
+
+.btn-logout:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(200, 92, 92, 0.4);
 }
 
-button[type="submit"]:active {
+.btn-logout:active {
   transform: translateY(0);
 }
 
-.back-to-login {
-  text-align: center;
-  margin-top: 15px;
+.btn-cancel {
+  background: #d4a574;
+  color: #fff8f0;
 }
 
-.back-to-login a {
-  color: #667eea;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  font-size: 14px;
-}
-
-.back-to-login a:hover {
-  color: #764ba2;
-  text-decoration: underline;
-}
-
-.success-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.success-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 40px;
-}
-
-.success-text {
-  color: #2d3748;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.btn-login {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 12px 30px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-}
-
-.btn-login:hover {
+.btn-cancel:hover {
+  background: #8b4513;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Extra small phones - up to 480px */
 @media (max-width: 480px) {
   body {
     padding: 15px;
   }
 
-  .forgot-container {
-    padding: 30px 20px;
+  .logout-card {
+    padding: 40px 25px;
     border-radius: 12px;
   }
 
-  .forgot-container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .welcome-container {
-    margin-bottom: 20px;
-  }
-
-  .welcome-container h2 {
-    font-size: 20px;
-    margin-bottom: 8px;
-  }
-
-  .welcome {
-    font-size: 13px;
-  }
-
-  form {
-    gap: 15px;
-  }
-
-  .input-container {
-    gap: 6px;
-  }
-
-  .input-container label {
-    font-size: 13px;
-  }
-
-  .input-container input {
-    padding: 11px 12px;
-    font-size: 14px;
-    border-radius: 6px;
-  }
-
-  button[type="submit"] {
-    padding: 11px 18px;
-    font-size: 15px;
-    margin-top: 8px;
-  }
-
-  .back-to-login a {
-    font-size: 13px;
-  }
-
-  .success-icon {
+  .logout-icon {
     width: 70px;
     height: 70px;
     font-size: 35px;
+    margin-bottom: 20px;
   }
 
-  .success-text {
-    font-size: 15px;
-  }
-
-  .error-message,
-  .success-message {
-    font-size: 13px;
-    padding: 10px 12px;
-  }
-}
-
-/* Small phones - 360px or less */
-@media (max-width: 360px) {
-  .forgot-container {
-    padding: 25px 15px;
-  }
-
-  .forgot-container h1 {
-    font-size: 22px;
-  }
-
-  .welcome-container h2 {
-    font-size: 18px;
-  }
-
-  .welcome {
-    font-size: 12px;
-  }
-
-  .input-container label {
-    font-size: 12px;
-  }
-
-  .input-container input {
-    padding: 10px 10px;
-    font-size: 13px;
-  }
-
-  button[type="submit"] {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-
-  .success-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 30px;
-  }
-}
-
-/* Tablets - 481px to 768px */
-@media (min-width: 481px) and (max-width: 768px) {
-  .forgot-container {
-    padding: 35px 30px;
-    border-radius: 13px;
-  }
-
-  .forgot-container h1 {
-    font-size: 28px;
-  }
-
-  .welcome-container h2 {
-    font-size: 22px;
-  }
-
-  .input-container input {
-    padding: 13px 15px;
-    font-size: 15px;
-  }
-
-  button[type="submit"] {
-    padding: 12px 20px;
-    font-size: 16px;
-  }
-}
-
-/* Small desktops - 769px to 1024px */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .forgot-container {
-    padding: 45px 35px;
-  }
-
-  .forgot-container h1 {
-    font-size: 30px;
-  }
-
-  .welcome-container h2 {
+  .logout-card h1 {
     font-size: 24px;
-  }
-
-  .input-container input {
-    padding: 14px 15px;
-    font-size: 15px;
-  }
-
-  button[type="submit"] {
-    padding: 13px 22px;
-    font-size: 16px;
-  }
-}
-
-/* Large desktops - 1025px and above */
-@media (min-width: 1025px) {
-  .forgot-container {
-    max-width: 500px;
-    padding: 50px 45px;
-  }
-
-  .forgot-container h1 {
-    font-size: 36px;
-    margin-bottom: 35px;
-  }
-
-  .welcome-container h2 {
-    font-size: 26px;
     margin-bottom: 12px;
   }
 
-  .welcome {
+  .logout-message {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .logout-actions {
+    gap: 10px;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 11px 20px;
     font-size: 15px;
   }
+}
 
-  .input-container label {
+@media (max-width: 360px) {
+  body {
+    padding: 10px;
+  }
+
+  .logout-card {
+    padding: 30px 20px;
+  }
+
+  .logout-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .logout-card h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .logout-message {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .logout-card {
+    padding: 45px 35px;
+    border-radius: 13px;
+  }
+
+  .logout-icon {
+    width: 75px;
+    height: 75px;
+    font-size: 38px;
+    margin-bottom: 22px;
+  }
+
+  .logout-card h1 {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .logout-message {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 12px 24px;
     font-size: 15px;
   }
+}
 
-  .input-container input {
-    padding: 14px 16px;
-    font-size: 15px;
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logout-card {
+    padding: 50px 38px;
   }
 
-  button[type="submit"] {
-    padding: 14px 24px;
-    font-size: 17px;
+  .logout-icon {
+    width: 85px;
+    height: 85px;
+    font-size: 42px;
+    margin-bottom: 28px;
   }
 
-  .success-icon {
+  .logout-card h1 {
+    font-size: 29px;
+    margin-bottom: 16px;
+  }
+
+  .logout-message {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 13px 28px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .logout-card {
+    padding: 55px 45px;
+    max-width: 500px;
+  }
+
+  .logout-icon {
     width: 90px;
     height: 90px;
     font-size: 45px;
+    margin-bottom: 30px;
   }
 
-  .success-text {
-    font-size: 18px;
+  .logout-card h1 {
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .logout-message {
+    font-size: 17px;
+    margin-bottom: 35px;
+    line-height: 1.8;
+  }
+
+  .btn-logout,
+  .btn-cancel {
+    padding: 14px 32px;
+    font-size: 17px;
   }
 }

@@ -5,8 +5,11 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: "Georgia", "Garamond", serif;
+  background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%),
+    url("../image/booksBackground.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
   min-height: 100vh;
   padding: 20px;
 }
@@ -14,29 +17,30 @@ body {
 .profile-container {
   width: 100%;
   max-width: 900px;
-  background: white;
+  background: rgba(255, 248, 240, 0.97);
   border-radius: 15px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   margin: 0 auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 90vh;
+  border: 2px solid #d4a574;
 }
 
 .profile-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #8b4513 0%, #5c3317 100%);
+  color: #fff8f0;
   padding: 30px 20px;
   display: flex;
   align-items: center;
   gap: 20px;
-  border-bottom: 5px solid #5a67d8;
+  border-bottom: 5px solid #5c3317;
 }
 
 .back-btn {
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: #fff8f0;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -59,6 +63,8 @@ body {
   font-weight: 700;
   flex: 1;
   margin: 0;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
 .header-spacer {
@@ -66,22 +72,22 @@ body {
 }
 
 .error-message {
-  background: #fed7d7;
-  color: #c53030;
+  background: #ffe0e0;
+  color: #8b3a3a;
   padding: 15px 20px;
   margin: 20px;
   border-radius: 8px;
-  border-left: 4px solid #c53030;
+  border-left: 4px solid #c85c5c;
   font-size: 14px;
 }
 
 .success-message {
-  background: #c6f6d5;
-  color: #22543d;
+  background: #e0f2e0;
+  color: #3a6b3a;
   padding: 15px 20px;
   margin: 20px;
   border-radius: 8px;
-  border-left: 4px solid #38a169;
+  border-left: 4px solid #5c8b5c;
   font-size: 14px;
 }
 
@@ -97,26 +103,26 @@ body {
 }
 
 .profile-card {
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
+  background: #faf5f0;
+  border: 2px solid #d4a574;
   border-radius: 12px;
   padding: 25px;
   transition: all 0.3s ease;
 }
 
 .profile-card:hover {
-  border-color: #667eea;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+  border-color: #8b4513;
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
 }
 
 .card-header {
   margin-bottom: 20px;
-  border-bottom: 2px solid #e9ecef;
+  border-bottom: 2px solid #d4a574;
   padding-bottom: 15px;
 }
 
 .card-header h2 {
-  color: #2d3748;
+  color: #5c3317;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -124,7 +130,7 @@ body {
 }
 
 .card-header i {
-  color: #667eea;
+  color: #8b4513;
 }
 
 .profile-form {
@@ -146,28 +152,31 @@ body {
 }
 
 .form-group label {
-  color: #2d3748;
+  color: #5c3317;
   font-weight: 600;
   font-size: 14px;
 }
 
 .form-group input {
   padding: 12px 15px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #d4a574;
   border-radius: 8px;
   font-size: 14px;
-  font-family: inherit;
+  font-family: "Georgia", serif;
   transition: all 0.3s ease;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #8b4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+  background: rgba(255, 255, 255, 1);
 }
 
 .form-group input::placeholder {
-  color: #a0aec0;
+  color: #a0927d;
 }
 
 .form-actions {
@@ -178,8 +187,8 @@ body {
 }
 
 .btn-save {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #8b4513 0%, #5c3317 100%);
+  color: #fff8f0;
   padding: 12px 30px;
   border: none;
   border-radius: 8px;
@@ -190,11 +199,12 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: "Georgia", serif;
 }
 
 .btn-save:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(139, 69, 19, 0.4);
 }
 
 .btn-save:active {
@@ -208,30 +218,30 @@ body {
 }
 
 .stat-item {
-  background: white;
+  background: #fdf8f3;
   padding: 20px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   gap: 15px;
-  border: 2px solid #e9ecef;
+  border: 2px solid #d4a574;
   transition: all 0.3s ease;
 }
 
 .stat-item:hover {
-  border-color: #667eea;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+  border-color: #8b4513;
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
 }
 
 .stat-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8b4513 0%, #5c3317 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff8f0;
   font-size: 24px;
   flex-shrink: 0;
 }
@@ -242,14 +252,14 @@ body {
 
 .stat-label {
   font-size: 12px;
-  color: #718096;
+  color: #8b7355;
   margin-bottom: 5px;
   font-weight: 500;
 }
 
 .stat-value {
   font-size: 28px;
-  color: #2d3748;
+  color: #5c3317;
   font-weight: 700;
   margin: 0;
 }
@@ -261,7 +271,7 @@ body {
 }
 
 .account-text {
-  color: #4a5568;
+  color: #7a5c3f;
   font-size: 14px;
   margin: 0;
 }
@@ -272,8 +282,8 @@ body {
 }
 
 .btn-logout {
-  background: #f56565;
-  color: white;
+  background: #c85c5c;
+  color: #fff8f0;
   padding: 12px 25px;
   border: none;
   border-radius: 8px;
@@ -285,19 +295,20 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-family: "Georgia", serif;
 }
 
 .btn-logout:hover {
-  background: #e53e3e;
+  background: #8b3a3a;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(245, 101, 101, 0.3);
+  box-shadow: 0 10px 25px rgba(200, 92, 92, 0.3);
 }
 
 .bottom-nav {
   display: flex;
   justify-content: space-around;
-  background: white;
-  border-top: 2px solid #e9ecef;
+  background: #faf5f0;
+  border-top: 2px solid #d4a574;
   padding: 10px 0;
   margin-top: auto;
 }
@@ -309,19 +320,19 @@ body {
   align-items: center;
   gap: 5px;
   padding: 10px;
-  color: #718096;
+  color: #8b7355;
   text-decoration: none;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
 }
 
 .nav-item:hover {
-  color: #667eea;
+  color: #8b4513;
 }
 
 .nav-item.active {
-  color: #667eea;
-  border-bottom-color: #667eea;
+  color: #8b4513;
+  border-bottom-color: #8b4513;
 }
 
 .nav-item i {
@@ -335,7 +346,6 @@ body {
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Extra small phones - up to 480px */
 @media (max-width: 480px) {
   body {
     padding: 10px;
@@ -418,16 +428,8 @@ body {
     padding: 11px 20px;
     font-size: 14px;
   }
-
-  .error-message,
-  .success-message {
-    margin: 15px;
-    padding: 12px 15px;
-    font-size: 13px;
-  }
 }
 
-/* Small phones - 360px or less */
 @media (max-width: 360px) {
   .profile-header {
     padding: 15px 10px;
@@ -459,7 +461,6 @@ body {
   }
 }
 
-/* Tablets - 481px to 768px */
 @media (min-width: 481px) and (max-width: 768px) {
   .profile-container {
     border-radius: 12px;
@@ -486,7 +487,6 @@ body {
   }
 }
 
-/* Small desktops - 769px to 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
   .profile-content {
     padding: 35px 30px;
@@ -513,7 +513,6 @@ body {
   }
 }
 
-/* Large desktops - 1025px and above */
 @media (min-width: 1025px) {
   .profile-content {
     padding: 40px 35px;

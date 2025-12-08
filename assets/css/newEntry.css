@@ -5,8 +5,11 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: "Georgia", "Garamond", serif;
+  background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%),
+    url("../image/booksBackground.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
   min-height: 100vh;
   padding: 20px;
 }
@@ -14,18 +17,19 @@ body {
 .new-entry-container {
   width: 100%;
   max-width: 900px;
-  background: white;
+  background: rgba(255, 248, 240, 0.97);
   border-radius: 15px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   margin: 0 auto;
   overflow: hidden;
+  border: 2px solid #d4a574;
 }
 
 .entry-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #8b4513 0%, #5c3317 100%);
+  color: #fff8f0;
   padding: 30px 20px;
-  border-bottom: 5px solid #5a67d8;
+  border-bottom: 5px solid #5c3317;
 }
 
 .header-content {
@@ -38,7 +42,7 @@ body {
 
 .back-btn {
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: #fff8f0;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -59,25 +63,27 @@ body {
   font-size: 32px;
   font-weight: 700;
   margin: 0;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
 .error-message {
-  background: #fed7d7;
-  color: #c53030;
+  background: #ffe0e0;
+  color: #8b3a3a;
   padding: 15px 20px;
   margin: 20px;
   border-radius: 8px;
-  border-left: 4px solid #c53030;
+  border-left: 4px solid #c85c5c;
   font-size: 14px;
 }
 
 .success-message {
-  background: #c6f6d5;
-  color: #22543d;
+  background: #e0f2e0;
+  color: #3a6b3a;
   padding: 15px 20px;
   margin: 20px;
   border-radius: 8px;
-  border-left: 4px solid #38a169;
+  border-left: 4px solid #5c8b5c;
   font-size: 14px;
 }
 
@@ -95,7 +101,7 @@ body {
 }
 
 .form-group label {
-  color: #2d3748;
+  color: #5c3317;
   font-weight: 600;
   font-size: 15px;
 }
@@ -103,24 +109,26 @@ body {
 .form-group input[type="text"],
 .form-group textarea {
   padding: 15px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #d4a574;
   border-radius: 8px;
   font-size: 15px;
-  font-family: inherit;
+  font-family: "Georgia", serif;
   transition: all 0.3s ease;
   width: 100%;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .form-group input[type="text"]:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #8b4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+  background: rgba(255, 255, 255, 1);
 }
 
 .form-group input[type="text"]::placeholder,
 .form-group textarea::placeholder {
-  color: #a0aec0;
+  color: #a0927d;
 }
 
 .form-group textarea {
@@ -149,16 +157,17 @@ body {
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-family: "Georgia", serif;
 }
 
 .btn-save {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #8b4513 0%, #5c3317 100%);
+  color: #fff8f0;
 }
 
 .btn-save:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(139, 69, 19, 0.4);
 }
 
 .btn-save:active {
@@ -166,18 +175,17 @@ body {
 }
 
 .btn-cancel {
-  background: #e2e8f0;
-  color: #4a5568;
+  background: #d4a574;
+  color: #fff8f0;
 }
 
 .btn-cancel:hover {
-  background: #cbd5e0;
+  background: #8b4513;
   transform: translateY(-2px);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Extra small phones - up to 480px */
 @media (max-width: 480px) {
   body {
     padding: 10px;
@@ -244,14 +252,9 @@ body {
   }
 }
 
-/* Small phones - 360px or less */
 @media (max-width: 360px) {
   .entry-header {
     padding: 15px 10px;
-  }
-
-  .header-content {
-    gap: 10px;
   }
 
   .entry-header h1 {
@@ -279,7 +282,6 @@ body {
   }
 }
 
-/* Tablets - 481px to 768px */
 @media (min-width: 481px) and (max-width: 768px) {
   .new-entry-container {
     border-radius: 12px;
@@ -312,7 +314,6 @@ body {
   }
 }
 
-/* Small desktops - 769px to 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
   .entry-form {
     padding: 35px 30px;
@@ -333,7 +334,6 @@ body {
   }
 }
 
-/* Large desktops - 1025px and above */
 @media (min-width: 1025px) {
   .entry-form {
     padding: 40px 35px;
