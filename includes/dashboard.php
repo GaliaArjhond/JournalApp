@@ -21,8 +21,27 @@ $user_query = "SELECT * FROM users WHERE id = '$user_id'";
 $user_result = $conn->query($user_query);
 $user = $user_result->fetch_assoc();
 
-// Fetch journal entries for the logged-in user
-$entries_query = "SELECT * FROM journal_entries WHERE user_id = '$user_id' ORDER BY createdAt DESC";
+// Get selected date from GET parameter or use today
+$selected_date = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
+
+// Validate date format
+if (!strtotime($selected_date)) {
+    $selected_date = date('Y-m-d');
+}
+
+// Extract year, month, day from selected date
+$selected_timestamp = strtotime($selected_date);
+$filter_year = date('Y', $selected_timestamp);
+$filter_month = date('m', $selected_timestamp);
+$filter_day = date('d', $selected_timestamp);
+
+// Build query to get entries for selected date
+$entries_query = "SELECT * FROM journal_entries WHERE user_id = '$user_id' 
+                  AND YEAR(createdAt) = '$filter_year' 
+                  AND MONTH(createdAt) = '$filter_month' 
+                  AND DAY(createdAt) = '$filter_day'
+                  ORDER BY createdAt DESC";
+
 $entries_result = $conn->query($entries_query);
 $entries = [];
 
@@ -33,6 +52,13 @@ if ($entries_result->num_rows > 0) {
 }
 
 $conn->close();
+
+// Calculate previous day
+$previous_date = date('Y-m-d', strtotime($selected_date . ' -1 day'));
+
+// Check if it's today
+$today = date('Y-m-d');
+$is_today = ($selected_date === $today);
 ?>
 
 <!DOCTYPE html>
@@ -54,17 +80,37 @@ $conn->close();
             <p class="greeting">Welcome, <?php echo htmlspecialchars($user['full_name']); ?>!</p>
         </div>
 
+        <!-- Date Navigator -->
+        <div class="date-navigator">
+            <a href="dashboard.php?date=<?php echo $previous_date; ?>" class="btn-prev-day">
+                <i class="fas fa-chevron-left"></i> Previous Day
+            </a>
+            <div class="date-display">
+                <div class="current-date">
+                    <span class="date-label"><?php echo date('l, F j, Y', strtotime($selected_date)); ?></span>
+                    <?php if ($is_today): ?>
+                        <span class="today-badge">Today</span>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <a href="dashboard.php" class="btn-today">
+                Today
+            </a>
+        </div>
+
         <div class="entries">
             <?php if (count($entries) > 0): ?>
+                <div class="filter-info">
+                    <p><?php echo count($entries); ?> entries for <?php echo date('F j, Y', strtotime($selected_date)); ?></p>
+                </div>
+
                 <?php foreach ($entries as $entry): ?>
                     <div class="entry-card">
                         <div class="entry-header">
                             <h3><?php echo htmlspecialchars($entry['title']); ?></h3>
-                            <span class="entry-date"><?php echo date('M d, Y', strtotime($entry['createdAt'])); ?></span>
+                            <span class="entry-date"><?php echo date('M d, Y g:i A', strtotime($entry['createdAt'])); ?></span>
                         </div>
-                        <div class="entry-content">
-                            <?php echo htmlspecialchars(substr($entry['content'], 0, 150)) . (strlen($entry['content']) > 150 ? '...' : ''); ?>
-                        </div>
+                        <div class="entry-content"><?php echo htmlspecialchars($entry['content']); ?></div>
                         <div class="entry-actions">
                             <a href="editEntry.php?id=<?php echo $entry['id']; ?>" class="btn-edit">
                                 <i class="fas fa-edit"></i> Edit
@@ -78,7 +124,7 @@ $conn->close();
             <?php else: ?>
                 <div class="no-entries">
                     <i class="fas fa-book"></i>
-                    <p>No journal entries yet. Create your first entry!</p>
+                    <p><?php echo $is_today ? 'No entries for today. Create your first entry!' : 'No entries found for this date.'; ?></p>
                 </div>
             <?php endif; ?>
         </div>
