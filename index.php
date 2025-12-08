@@ -2,22 +2,41 @@
 session_start();
 $conn = new mysqli("localhost", "root", "admin", "journalapp");
 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = md5($_POST['password']);
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        $_SESSION['user_id'] = $user['id'];
-        header("Location: profile.php");
-        exit();
+    if (empty($email) || empty($password)) {
+        $error = "Email and password are required!";
     } else {
-        $error = "Invalid email or password!";
+        // Use prepared statement to prevent SQL injection
+        $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            // Compare the entered password with the stored hash
+            if (md5($password) === $user['password']) {
+                $_SESSION['user_id'] = $user['id'];
+                header("Location: includes/dashboard.php");
+                exit();
+            } else {
+                $error = "Invalid email or password!";
+            }
+        } else {
+            $error = "Invalid email or password!";
+        }
+        $stmt->close();
     }
 }
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -38,10 +57,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>Welcome Back!</h2>
                 <p class="welcome">Please enter your credentials to log in.</p>
             </div>
+            <?php if (isset($error)): ?>
+                <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
+            <?php endif; ?>
             <form action="index.php" method="post">
                 <div class="input-container">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required />
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required />
                 </div>
